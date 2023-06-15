@@ -11,7 +11,7 @@ import java.net.URL;
 import java.util.Arrays;
 import java.util.concurrent.Callable;
 
-@Command(name = "Print commit prefix", mixinStandardHelpOptions = true, version = "0.1.8",
+@Command(name = "Print commit prefix", mixinStandardHelpOptions = true, version = "0.1.10",
         description = """
                 Prints the project names for a list of files to STDOUT.
                 
