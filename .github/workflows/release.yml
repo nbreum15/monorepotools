@@ -101,6 +101,9 @@ jobs:
             --head $BRANCH
   release-cli:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
     steps:
       - name: Fetch Sources
         uses: actions/checkout@v3
