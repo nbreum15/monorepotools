@@ -17,6 +17,11 @@ modules/module1/file.txt
 
 The tool can be configured to write a commit message prefix: `#1234 [module1]`. If no issue ID is present in the branch, none is inserted.
 
+### Usage
+The commit prefix is inserted when pressing the 'm' icon in the commit tool window.
+
+Alternatively, automatic commit prefix can be toggled in Monorepo Tools > Auto Commit Message.
+
 ### Getting started
 
 1. Open File > Settings > Monorepo Tools
