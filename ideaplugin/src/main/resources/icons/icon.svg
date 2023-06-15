@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+<svg
+   width="16"
+   height="16"
+   viewBox="0 0 16 16"
+   fill="none"
+   version="1.1"
+   id="svg8"
+   sodipodi:docname="icon.svg"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs12" />
+  <sodipodi:namedview
+     id="namedview10"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="62.625"
+     inkscape:cx="5.2934132"
+     inkscape:cy="8"
+     inkscape:window-width="2560"
+     inkscape:window-height="1377"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg8" />
+  <path
+     d="m 11.061502,3.7449065 c 0.568301,0 1.067059,0.1380518 1.495832,0.4141554 0.434088,0.2706997 0.767332,0.6550743 0.999879,1.1531387 0.232547,0.4926604 0.348747,1.058407 0.348747,1.6972251 V 12.255453 H 12.394625 V 7.1555982 c 0,-0.6442368 -0.144696,-1.1450179 -0.434088,-1.5023285 -0.284225,-0.3573105 -0.694984,-0.5359658 -1.232323,-0.5359658 -0.408205,0 -0.7621495,0.102867 -1.0618327,0.3085864 C 9.3718511,5.6262057 9.1445012,5.913132 8.9843315,6.2866839 8.8293149,6.6548319 8.7518139,7.0879307 8.7518139,7.585995 v 4.669458 H 7.2559377 V 7.1555982 C 7.2559377,6.5167801 7.1035196,6.018701 6.798654,5.6613904 6.4989708,5.2986759 6.0804302,5.1173039 5.5430617,5.1173039 c -0.6045488,0 -1.0773356,0.2219755 -1.4183605,0.6658969 C 3.7836763,6.2271371 3.6131565,6.8280685 3.6131565,7.585995 v 4.669458 H 2.0940403 V 3.9398032 h 1.4726215 v 1.274949 C 3.8095001,4.7437519 4.1298689,4.3810374 4.5277239,4.1265792 4.9307613,3.8721356 5.3906289,3.7449065 5.9073413,3.7449065 c 0.5838779,0 1.092824,0.1461725 1.5268678,0.4385175 0.4391967,0.2869411 0.77247,0.6875571 0.9998199,1.2018628 C 8.7027206,4.8655624 9.0618325,4.4622444 9.5113646,4.1753033 9.9660645,3.888377 10.482777,3.7449065 11.061502,3.7449065 Z"
+     fill="#DB3B4B"
+     id="path2"
+     style="fill:#42804b;fill-opacity:1;stroke-width:1.47649" />
+</svg>

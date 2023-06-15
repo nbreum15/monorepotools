@@ -1,0 +1,58 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin require-restart="true">
+    <id>com.github.nbreum15.monorepotools</id>
+    <name>Monorepo Tools</name>
+    <vendor>nbreum15</vendor>
+
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <postStartupActivity implementation="com.github.nbreum15.monorepotools.listeners.ExcludeFilesProjectStartupListener"/>
+
+        <!-- Auto Commit Message Settings -->
+        <projectService serviceImplementation="com.github.nbreum15.monorepotools.settings.autocommitmessage.AutoCommitMessageSettingsState"/>
+        <!-- Commit Message Settings -->
+        <projectService serviceImplementation="com.github.nbreum15.monorepotools.settings.commitmessage.CommitMessageSettingsState"/>
+        <!-- Exclude Files Settings -->
+        <projectService serviceImplementation="com.github.nbreum15.monorepotools.settings.excludefiles.ExcludeFilesSettingsState"/>
+        <projectConfigurable
+                parentId="tools"
+                instance="com.github.nbreum15.monorepotools.settings.commitmessage.CommitMessageSettingsConfigurable"
+                id="com.github.nbreum15.monorepotools.settings.commitmessage"
+                displayName="Monorepo Tools"
+                nonDefaultProject="true">
+            <configurable
+                    instance="com.github.nbreum15.monorepotools.settings.autocommitmessage.AutoCommitMessageSettingsConfigurable"
+                    id="com.github.nbreum15.monorepotools.settings.autocommitmessage.AutoCommitMessageSettingsConfigurable"
+                    displayName="Auto Commit Message"
+                    nonDefaultProject="true"/>
+            <configurable
+                    instance="com.github.nbreum15.monorepotools.settings.excludefiles.ExcludeFilesSettingsConfigurable"
+                    id="com.github.nbreum15.monorepotools.settings.excludefiles.ExcludeFilesSettingsConfigurable"
+                    displayName="Exclude Files (experimental)"
+                    nonDefaultProject="true"/>
+        </projectConfigurable>
+
+        <vcs.delayedCommitMessageProvider implementation="com.github.nbreum15.monorepotools.extensions.AutomaticCommitMessageProvider"/>
+    </extensions>
+
+    <projectListeners>
+        <listener class="com.github.nbreum15.monorepotools.listeners.ExcludeFilesBranchChangeListener" topic="com.intellij.openapi.vcs.BranchChangeListener"/>
+    </projectListeners>
+
+    <actions>
+
+        <action id="monorepotools.ChangesViewToolbar.ActiveChangeListAction"
+                class="com.github.nbreum15.monorepotools.actions.CommitMessageAction"
+                text="Create Commit Message Prefix"
+                icon="com.github.nbreum15.monorepotools.PluginIcons.CommitMessagePrefixAction"
+                description="Create a commit message prefix based on selected changes">
+
+            <add-to-group group-id="ChangesViewToolbar" anchor="last"/>
+            <add-to-group group-id="ChangesViewPopupMenu" anchor="last"/>
+        </action>
+    </actions>
+
+    <depends>Git4Idea</depends>
+
+</idea-plugin>

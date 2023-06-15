@@ -1,0 +1,56 @@
+[
+  {
+    "name": "com.github.nbreum15.monorepotools.configwrappers.ProjectWrapperDTO",
+    "methods": [
+      { "name": "<init>", "parameterTypes": [] },
+      { "name": "getComponent", "parameterTypes": [] },
+      { "name": "setComponent", "parameterTypes": ["com.github.nbreum15.monorepotools.configwrappers.ComponentWrapperDTO"] }
+    ]
+  },
+  {
+    "name": "com.github.nbreum15.monorepotools.configwrappers.ComponentWrapperDTO",
+    "methods": [
+      { "name": "<init>", "parameterTypes": [] },
+      { "name": "getConfig", "parameterTypes": [] },
+      { "name": "setConfig", "parameterTypes": ["com.github.nbreum15.monorepotools.configwrappers.ConfigWrapperDTO"] }
+    ]
+  },
+  {
+    "name": "com.github.nbreum15.monorepotools.configwrappers.ConfigWrapperDTO",
+    "methods": [
+      { "name": "<init>", "parameterTypes": [] },
+      { "name": "getCommitMessageConfigDTO", "parameterTypes": [] },
+      { "name": "setCommitMessageConfigDTO", "parameterTypes": ["com.github.nbreum15.monorepotools.config.dto.CommitMessageConfigDTO"] }
+    ]
+  },
+  {
+    "name": "com.github.nbreum15.monorepotools.config.dto.CommitMessageConfigDTO",
+    "methods": [
+      { "name": "<init>", "parameterTypes": [] },
+      { "name": "getRootFolder", "parameterTypes": [] },
+      { "name": "setRootFolder", "parameterTypes": ["java.lang.String"] },
+      { "name": "getFolderLevels", "parameterTypes": [] },
+      { "name": "setFolderLevels", "parameterTypes": ["java.util.List"] },
+      { "name": "getExpandFolders", "parameterTypes": [] },
+      { "name": "setExpandFolders", "parameterTypes": ["java.util.List"] }
+    ]
+  },
+  {
+    "name": "com.github.nbreum15.monorepotools.config.dto.ExpandFolderDTO",
+    "methods": [
+      { "name": "<init>", "parameterTypes": [] },
+      { "name": "getFolderParts", "parameterTypes": [] },
+      { "name": "setFolderParts", "parameterTypes": ["java.util.List"] }
+    ]
+  },
+  {
+    "name": "com.github.nbreum15.monorepotools.config.dto.FolderLevelDTO",
+    "methods": [
+      { "name": "<init>", "parameterTypes": [] },
+      { "name": "getFolderName", "parameterTypes": [] },
+      { "name": "setFolderName", "parameterTypes": ["java.lang.String"] },
+      { "name": "getLevel", "parameterTypes": [] },
+      { "name": "setLevel", "parameterTypes": ["int"] }
+    ]
+  }
+]

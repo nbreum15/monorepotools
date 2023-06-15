@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+    <component name="com.github.nbreum15.monorepotools.settings.commitmessage.CommitMessageSettingsState">
+        <config>
+            <CommitMessageConfigDTO>
+                <rootFolder>root-new</rootFolder>
+                <folderLevels>
+                    <FolderLevelDTO>
+                        <folderName>apis</folderName>
+                        <level>2</level>
+                    </FolderLevelDTO>
+                </folderLevels>
+                <expandFolders>
+                    <ExpandFolderDTO>
+                        <folderParts>
+                            <folderParts>modules</folderParts>
+                            <folderParts>submodules</folderParts>
+                        </folderParts>
+                    </ExpandFolderDTO>
+                </expandFolders>
+            </CommitMessageConfigDTO>
+        </config>
+    </component>
+</project>
