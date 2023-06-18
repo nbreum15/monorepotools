@@ -43,6 +43,8 @@ public class FolderLevelPanel extends JPanel {
         final JPanel tablePane = ToolbarDecorator.createDecorator(table)
                 .setAddAction(anActionButton -> doAdd())
                 .setRemoveAction(anActionButton -> doRemove())
+                .setMoveUpAction(anActionButton -> moveUp())
+                .setMoveDownAction(anActionButton -> moveDown())
                 .setAsUsualTopToolbar().createPanel();
 
         add(tablePane);
@@ -86,4 +88,23 @@ public class FolderLevelPanel extends JPanel {
         table.setEnabled(enabled);
     }
 
+    private void moveUp() {
+        int selected = table.getSelectedRow();
+        if (selected < 1) {
+            return;
+        }
+        Collections.swap(getRows(), selected, selected - 1);
+        getModel().fireTableRowsUpdated(selected - 1, selected);
+        table.setRowSelectionInterval(selected - 1, selected - 1);
+    }
+
+    private void moveDown() {
+        int selected = table.getSelectedRow();
+        if (selected >= getRows().size() - 1) {
+            return;
+        }
+        Collections.swap(getRows(), selected, selected + 1);
+        getModel().fireTableRowsUpdated(selected, selected + 1);
+        table.setRowSelectionInterval(selected + 1, selected + 1);
+    }
 }

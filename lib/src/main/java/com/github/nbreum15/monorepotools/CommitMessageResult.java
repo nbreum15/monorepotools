@@ -1,10 +1,14 @@
 package com.github.nbreum15.monorepotools;
 
 import lombok.Builder;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.ToString;
 
 @Getter
 @Builder
+@EqualsAndHashCode
+@ToString
 public class CommitMessageResult {
     /**
      * Issue id if one was found in the branch. Null if none was found.
@@ -25,10 +29,5 @@ public class CommitMessageResult {
     /**
      * New commit message. This string is meant for presentation purposes and will be used by the IntelliJ plugin.
      */
-    public String getCommitMessage() {
-        if (getCommitPrefix() == null || getCommitPrefix().isEmpty()) {
-            return getOldCommitMessageWithoutPrefix();
-        }
-        return "%s %s".formatted(getCommitPrefix(), getOldCommitMessageWithoutPrefix());
-    }
+    private String commitMessage;
 }

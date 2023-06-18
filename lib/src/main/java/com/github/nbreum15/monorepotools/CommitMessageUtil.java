@@ -105,6 +105,9 @@ class CommitMessageUtil {
                 .commitPrefix(commitPrefix)
                 .issueId(issueString)
                 .changedProjectsString(changedProjectsString)
+                .commitMessage(commitPrefix == null || commitPrefix.isEmpty()
+                        ? oldCommitMsgWithoutPrefix
+                        : "%s %s".formatted(commitPrefix, oldCommitMsgWithoutPrefix))
                 .build();
     }
 
