@@ -1,7 +1,12 @@
+fun properties(key: String) = providers.gradleProperty(key)
+
 plugins {
     application
     id("org.graalvm.buildtools.native") version "0.9.12"
 }
+
+group = properties("pluginGroup").get()
+version = properties("pluginVersion").get()
 
 repositories {
     mavenCentral()
@@ -28,6 +33,10 @@ java {
     }
 }
 
+tasks.test {
+    systemProperty("cli.version", version)
+}
+
 application {
     mainClass.set("com.github.nbreum15.monorepotools.CommitMessageCLI")
 }
@@ -39,6 +48,29 @@ tasks.named<Test>("test") {
 graalvmNative {
     binaries.all {
         resources.autodetect()
+        resources.includedPatterns.add(".*txt$")
     }
     toolchainDetection.set(false)
 }
+
+abstract class WriteVersionTxtTask : DefaultTask() {
+    @get:Input
+    abstract val versionNumber: Property<String>
+
+    @get:Input
+    abstract val projectDirectory: Property<File>
+
+    @TaskAction
+    fun writeFile() {
+        val f = File(projectDirectory.get(), "src/main/resources/version.txt")
+        f.createNewFile()
+        f.writeText(versionNumber.get())
+    }
+}
+
+tasks.register<WriteVersionTxtTask>("writeVersionFile") {
+    versionNumber.set(version.toString())
+    projectDirectory.set(projectDir)
+}
+
+tasks.getByName("processResources").dependsOn("writeVersionFile")

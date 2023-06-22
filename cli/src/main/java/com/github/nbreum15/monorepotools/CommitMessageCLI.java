@@ -7,11 +7,14 @@ import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;
 import picocli.CommandLine.Parameters;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.net.URL;
 import java.util.Arrays;
+import java.util.Scanner;
 import java.util.concurrent.Callable;
 
-@Command(name = "Print commit prefix", mixinStandardHelpOptions = true, version = "0.1.10",
+@Command(name = "Print commit prefix", mixinStandardHelpOptions = true, versionProvider = CommitMessageCLI.ManifestVersionProvider.class,
         description = """
                 Prints the project names for a list of files to STDOUT.
                 
@@ -57,5 +60,17 @@ class CommitMessageCLI implements Callable<Integer> {
     public static void main(String... args) {
         int exitCode = new CommandLine(new CommitMessageCLI()).execute(args);
         System.exit(exitCode);
+    }
+
+    static class ManifestVersionProvider implements CommandLine.IVersionProvider {
+        public String[] getVersion() {
+            var isr = new InputStreamReader(this.getClass().getResourceAsStream("/version.txt"));
+            var br = new BufferedReader(isr);
+            Scanner s = new Scanner(br);
+            if (s.hasNext()) {
+                return new String[] { s.next() };
+            }
+            return new String[0];
+        }
     }
 }

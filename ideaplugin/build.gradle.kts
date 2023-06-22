@@ -11,11 +11,6 @@ plugins {
     alias(libs.plugins.changelog) // Gradle Changelog Plugin
     alias(libs.plugins.qodana) // Gradle Qodana Plugin
     alias(libs.plugins.kover) // Gradle Kover Plugin
-    id("application")
-}
-
-application {
-    mainClass.set("com.github.nbreum15.monorepotools.CommitMessageCLI")
 }
 
 group = properties("pluginGroup").get()

@@ -22,4 +22,15 @@ public class CommitMessageCLITest {
         assertEquals(0, exitCode);
         assertEquals("#1234 [api-1, modules/submodules/submodule1, root-new]", sw.toString());
     }
+
+    @Test
+    void version() {
+        CommitMessageCLI cli = new CommitMessageCLI();
+        CommandLine commandLine = new CommandLine(cli);
+        StringWriter sw = new StringWriter();
+        commandLine.setOut(new PrintWriter(sw));
+        int exitCode = commandLine.execute("--version");
+        assertEquals(0, exitCode);
+        assertEquals(System.getProperty("cli.version") + System.lineSeparator(), sw.toString());
+    }
 }
