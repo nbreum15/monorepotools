@@ -29,13 +29,13 @@ class CommitMessageUtil {
         for (FolderLevelDTO folder : dto.getFolderLevels()) {
             // case 1: a change may be made as a direct child regardless of level.
             // E.g. For a level 2 folder 'customers', and a change 'customers/file.txt', the change will be in 'customers'
-            if (folder.getFolderName().contains(parts.get(0)) && parts.size() == 2) {
+            if (folder.getFolderNameParts().get(0).equals(parts.get(0)) && parts.size() == 2) {
                 return parts.get(0);
             }
             // case 2: a change may still not be at the level the folder specifies.
             // E.g. For a level 2 folder 'customers', and a change 'customers/customer/file.txt' the change will be in 'customer'
             for (int i = folder.getLevel() + 1; i > 1; i--) {
-                if (folder.getFolderName().contains(parts.get(0)) && parts.size() > i) {
+                if (folder.getFolderNameParts().equals(parts.subList(0, folder.getFolderNameParts().size())) && parts.size() > i) {
                     return (parts.subList(i - 1, parts.size())).get(0);
                 }
             }

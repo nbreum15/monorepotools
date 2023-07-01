@@ -127,6 +127,12 @@ public class CommitMessageUtilTest {
         ));
 
         args.add(Arguments.of(
+                "folder levels are ordered - src",
+                "[project1]",
+                getProjectChanges(List.of("/project/projects/project1/src/pom.xml"))
+        ));
+
+        args.add(Arguments.of(
                 "folder levels are ordered",
                 "[subproject1]",
                 getProjectChanges(List.of("/project/projects/subprojects/subproject1/pom.xml"))
