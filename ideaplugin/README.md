@@ -32,13 +32,4 @@ Alternatively, automatic commit prefix can be toggled in Monorepo Tools > Auto C
    1. This is what folders to keep in the path to keep, e.g. if the parent folder should still be part of the project name. For a file `modules/module1`, and an expansion for `modules` is set, the prefix will be `[modules/module1]`.
 4. Configure root folder name. If any changes are made in the root folder, a custom name can be specified to insert in the commit prefix. E.g. a file `./file.txt`, the default prefix will be `[root]`.
 
-## Exclude folders (experimental feature)
-*Note this feature uses `git ls-files`, and therefore only works in a Git repository*.
-
-Exclude folders automatically based on glob patterns.
-
-For example, in a monorepo you may only want to have Java APIs shown, so you can configure a pattern:
-
-`**/package.json` to exclude all folders with such a file. These exclusions will be written to the module IML file.
-
 <!-- Plugin description end -->
