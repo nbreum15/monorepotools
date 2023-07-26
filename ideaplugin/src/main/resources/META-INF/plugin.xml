@@ -24,7 +24,7 @@
                     nonDefaultProject="true"/>
         </projectConfigurable>
 
-        <vcs.delayedCommitMessageProvider implementation="com.github.nbreum15.monorepotools.extensions.AutomaticCommitMessageProvider"/>
+        <postStartupActivity implementation="com.github.nbreum15.monorepotools.extensions.AutomaticCommitMessageProvider"/>
     </extensions>
 
     <actions>
